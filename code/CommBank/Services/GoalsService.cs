@@ -27,4 +27,8 @@ public class GoalsService : IGoalsService
 
     public async Task RemoveAsync(string id) =>
         await _goalsCollection.DeleteOneAsync(x => x.Id == id);
+
+    public async Task<List<Goal>> GetForUserAsync(string userId) =>
+        await _goalsCollection.Find(g => g.UserId == userId).ToListAsync();
+
 }

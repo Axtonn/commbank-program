@@ -29,6 +29,11 @@ public class GoalController : ControllerBase
 
     }
 
+    [HttpGet("user/{userId:length(24)}")]
+    public async Task<List<Goal>> GetForUser(string userId) =>
+        await _goalsService.GetForUserAsync(userId);
+
+
     [HttpPost]
     public async Task<IActionResult> Post(Goal newGoal)
     {
@@ -65,4 +70,6 @@ public class GoalController : ControllerBase
         await _goalsService.RemoveAsync(id);
         return NoContent();
     }
+
+
 }
