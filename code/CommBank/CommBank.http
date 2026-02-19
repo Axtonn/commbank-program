@@ -1,0 +1,6 @@
+@CommBank_HostAddress = http://localhost:5117
+
+GET {{CommBank_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,1 +1,7 @@
 node_modules/
+
+# Ignore .NET build outputs
+bin/
+obj/
+**/bin/
+**/obj/
